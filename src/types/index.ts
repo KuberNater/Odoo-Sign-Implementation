@@ -3,5 +3,6 @@ export interface PayloadType {
     email: string,
     pdf_base64: string,
     filtered_json: Record<string, any>,
-    webhook_url: string
+    webhook_url: string,
+    quoteNo:number
 }

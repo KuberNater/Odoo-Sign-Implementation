@@ -41,4 +41,22 @@ app.post('/webhook/fetchdetails', middlware_1.verifyWebhook, (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 });
+app.post('/test/odoo-webhook', (req, res) => {
+    try {
+        const webhook_payload = req.body;
+        console.log(`This is the odoo test webhook payload data : ${JSON.stringify(webhook_payload)}`);
+    }
+    catch (error) {
+        console.log(`Error in calling the odoo web hook test`);
+    }
+});
+app.post('/test/resend-hook', (req, res) => {
+    try {
+        const resendData = req.body;
+        console.log(`This is the data of the resend mail : ${JSON.stringify(resendData)}`);
+    }
+    catch (error) {
+        console.log(`Error in calling the test webhook`);
+    }
+});
 exports.default = app;
