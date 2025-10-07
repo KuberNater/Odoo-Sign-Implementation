@@ -53,7 +53,8 @@ app.post('/test/odoo-webhook', (req, res) => {
 app.post('/test/resend-hook', (req, res) => {
     try {
         const resendData = req.body;
-        console.log(`This is the data of the resend mail : ${JSON.stringify(resendData)}`);
+        console.log({ resendData });
+        res.status(200).json({ message: "Webhook received", success: true });
     }
     catch (error) {
         console.log(`Error in calling the test webhook`);

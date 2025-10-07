@@ -1,0 +1,15 @@
+meta {
+  name: Fetching and updating the document status of sign request
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8069/sign-request/restore/expire-state/241
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
